@@ -32,6 +32,8 @@ Document at least 3 bugs you found. Add rows as needed.
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+The AI tool that I used on this project was Claude. The fixes that I targeted include misleading hints, incorrect display of the remaining number of attempts, new game not working, and difficulty ranges being wrong. For each of these errors, I asked the Claude to first explain the logic in the code that might have caused the errors, then suggest changes to help improve the error. After the error was improved, I asked Claude to generate test cases to ensure that the game logic was working correctly (mainly for having the right hints and difficulty ranges). For example, to fix the hints being displayed incorrectly, Claude suggested to swap the message for higher and lower in order to match what the user actually needed to do. This suggestion made sense, and I verified it by asking it to make test cases to ensure the right hint message was returning. Honestly, I could not find any misleading suggestions in my usage of Claude. Although, one suggestion I did reject was Claude trying to add a test case to check if the easy and hard difficulty range was lower than the normal one, which I thought was unnecesary. Overall, I verified the results from Claude by asking it to generate test cases and playtesting the website to see if everything worked.
+
 ---
 
 ## 3. Debugging and testing your fixes
@@ -41,6 +43,7 @@ Document at least 3 bugs you found. Add rows as needed.
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
 
+I decided whether a bug was fixed by asking the AI to create a test and playtesting the website. One test that I ran using pytest was to check the difficulty ranges of the game for easy, medium, and hard mode. The AI I used designed these tests - I had no input in creating them. However, I do think that the difficulty and hint test cases that the AI generated were relatively straightforward, but effective and easy to verify manually. Additionally, I playtested the website to make sure the changes were effective. My methodology for playtesting was simple, where I repeated the documented inputs listed above to see if the expected behavior matches the actual behavior. 
 ---
 
 ## 4. What did you learn about Streamlit and state?

@@ -15,6 +15,7 @@ def test_guess_too_low():
     result, message = check_guess(40, 50)
     assert result == "Too Low"
 
+# The following test cases from here were designed in agent mode 
 def test_too_high_hint_message():
     # Guess is too high, so the hint should tell the player to go lower
     _, message = check_guess(60, 50)
