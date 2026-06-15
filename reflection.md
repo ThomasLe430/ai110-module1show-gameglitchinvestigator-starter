@@ -8,15 +8,21 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
 
+  What happened when I ran the game was that whenever I tried to guess the correct number, the hints were always opposite (lower when it should actually be higher and vice versa). I also noticed that I was not able to hit enter and start a new game once one was finished. I was also confused why it displayed game over when I had one attempt remaining. 
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| 50    | Hint: Go Lower    |  Hint: Go Higher| None, target was 78.   |
+| 1.    | Attempts left: 6. | Attempt left: 7 | None, first guess didnt go down|
+|New Game| Start New Game.  | Nothing happens | None, cant submit guess when new game is pressed|
+|Re-show Hint| Display Hint    | Nothing happens | None, can't get hint to re-appear |
+|Easy Difficulty| Number from 1-20 | Number out of range | None |
+|Correct guess after 6 guesses (normal diff)| Positive score | Score -10 | None | 
+
+
 
 ---
 
