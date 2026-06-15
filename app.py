@@ -19,7 +19,13 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
+# FIX: Refactored resetting game state logic into this function using agent mode
+def reset_game_state(low: int, high: int):
+    st.session_state.secret = random.randint(low, high)
+    st.session_state.attempts = 0
+    st.session_state.score = 0
+    st.session_state.status = "playing"
+    st.session_state.history = []
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
     if outcome == "Win":
@@ -68,11 +74,7 @@ if "difficulty" not in st.session_state:
 
 if st.session_state.difficulty != difficulty:
     st.session_state.difficulty = difficulty
-    st.session_state.secret = random.randint(low, high)
-    st.session_state.attempts = 0
-    st.session_state.score = 0
-    st.session_state.status = "playing"
-    st.session_state.history = []
+    reset_game_state(low, high)
 
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
@@ -114,11 +116,7 @@ with col3:
 # FIX: New game now resets history, status, and current difficulty.
 # Implemented in agent mode
 if new_game:
-    st.session_state.attempts = 0
-    st.session_state.score = 0
-    st.session_state.status = "playing"
-    st.session_state.history = []
-    st.session_state.secret = random.randint(low, high)
+    reset_game_state(low, high)
     st.success("New game started.")
     st.rerun()
 
