@@ -42,6 +42,18 @@ def check_guess(guess, secret):
         return "Too Low", "📈 Go HIGHER!"
 
 
-def update_score(current_score: int, outcome: str, attempt_number: int):
+
+# FIX: Simplified logic and added difficulty multipliers with suggestions from AI Mmode
+def update_score(current_score: int, outcome: str, attempt_number: int, difficulty: str):
     """Update score based on outcome and attempt number."""
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if outcome == "Win":
+        # Win Bonus
+        points = 100 - 10 * attempt_number
+        # Difficulty Bonus
+        multipliers = {"Easy": 1.0, "Normal": 1.5, "Hard": 2.0}
+        # Force minimum points to be 10
+        if points < 10:
+            points = 10
+        return int(points * multipliers[difficulty])
+
+    return current_score
