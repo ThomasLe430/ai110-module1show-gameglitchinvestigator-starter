@@ -18,7 +18,6 @@ Document at least 3 bugs you found. Add rows as needed.
 | 50    | Hint: Go Lower    |  Hint: Go Higher| None, target was 78.   |
 | 1.    | Attempts left: 6. | Attempt left: 7 | None, first guess didnt go down|
 |New Game| Start New Game.  | Nothing happens | None, cant submit guess when new game is pressed|
-|Re-show Hint| Display Hint    | Nothing happens | None, can't get hint to re-appear |
 |Easy Difficulty| Number from 1-20 | Number out of range | None |
 |Correct guess after 6 guesses (normal diff)| Positive score | Score -10 | None | 
 
@@ -49,6 +48,7 @@ I decided whether a bug was fixed by asking the AI to create a test and playtest
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+From what I've learned, Streamlit is a front-end library that allows for easy web development without any HTML or CSS. Streamlit runs the script in app.py repeatedly once the app is started. I belive the script triggers once the app is loaded and then triggers again everytime the user interacts with something on the site. The automatic, repeating nature makes the code cleaner, only needing "if" states to detect and force desired behavior. The state holds information in the current run through, similar to how a class stores information.
 
 ---
 
@@ -58,3 +58,7 @@ I decided whether a bug was fixed by asking the AI to create a test and playtest
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+One mindset I want to keep in the future is a understanding and test forward usage of AI. When I first pictured AI development, I 
+imagined that the AI would do all the work for me and I would only have to provide a vision. However, this project showed me that 
+more involvement is required to effectively guide the AI as a tool. Instead of blindly trusting the AI, I need to strategically prompt it and give it guiderails, as well as ask it to explain the code and provide test cases. By asking for explanations and test cases, I can better understand and utilize the code I am producing. 
