@@ -25,28 +25,29 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- The game's objective is to guess a secret number, where incorrect guesses tell you to go lower or higher.
+- Some of the initial bugs I found included misleading hints, wrong attempt counter, new game button not working, score being negative, and difficulty changes not working.
+- I fixed the hints, attempt display, new game functionality and difficulty changes. I also added a new scoring system that applies a bonus multiplier for the current difficulty.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enters the number 50 
+2. Hint says to go lower
+3. User enters the number 25
+4. Hint says to go higher
+5. Guesses repeat until the correct target number
+6. Score is returned at the end, which depends on difficulty and number of attempts
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
 ```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+tests/test_game_logic.py ........                                           [100%]
+
+================================ 8 passed in 0.03s ================================
 ```
 
 ## 🚀 Stretch Features
